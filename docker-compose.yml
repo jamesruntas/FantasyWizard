@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  django_app:
+    build: ./django_app
+    volumes:
+      - ./django_app:/app
+    ports:
+      - "8000:8000"
+  
+  jupyter:
+    build: ./jupyter
+    volumes:
+      - ./jupyter/notebooks:/usr/src/app/notebooks
+    ports:
+      - "8888:8888"
