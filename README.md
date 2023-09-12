@@ -14,7 +14,7 @@ Follow these steps to get the environment up and running:
 ### 1. Clone the Repository:
 
 ```bash
-git clone [YOUR_REPOSITORY_URL]
+git clone https://github.com/jamesruntas/FantasyWizard.git
 cd [YOUR_REPOSITORY_DIRECTORY]
 ```
 
