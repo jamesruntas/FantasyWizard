@@ -1,6 +1,6 @@
 # MyProject
 
-This project contains a Django web application and a Jupyter Notebook, both set up to run in Docker containers.
+This project contains a Django web application (Frontend and Backend) and a Jupyter Notebook (Machine Learning stuff), both set up to run in Docker containers.
 
 ## Prerequisites
 
