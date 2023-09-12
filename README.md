@@ -16,25 +16,27 @@ Follow these steps to get the environment up and running:
 ```bash
 git clone [YOUR_REPOSITORY_URL]
 cd [YOUR_REPOSITORY_DIRECTORY]
-
+```
 
 ### 2. Build and Start the Docker Containers:
 
 ```bash
 docker-compose build
 docker-compose up
-
+```
 ### 3. Access the Services:
 
 Django App: Once the containers are up and running, the Django app will be accessible at:
 
 ```bash
 http://localhost:8000/
+```
 
 Jupyter Notebook: The Jupyter notebook can be accessed at:
 
 ```bash
     http://localhost:8888/
+```
 
 4. Stopping the Services:
 
@@ -44,3 +46,4 @@ Alternatively, you can run the following command in another terminal:
 
 ```bash
 docker-compose down
+```
