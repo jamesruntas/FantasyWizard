@@ -1,9 +1,16 @@
-FROM python:3.8
+FROM python:3.9
 
-WORKDIR /app
+# set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
 
-COPY requirements.txt /app/
-RUN pip install --upgrade pip && pip install -r requirements.txt
+COPY requirements.txt .
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# install python dependencies
+RUN pip install --upgrade pip
+RUN pip install --no-cache-dir -r requirements.txt
 
+COPY . .
+
+# gunicorn
+CMD ["gunicorn", "--config", "gunicorn-cfg.py", "run:app"]

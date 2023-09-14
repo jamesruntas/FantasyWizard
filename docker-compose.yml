@@ -1,16 +1,28 @@
 version: '3'
 
 services:
-  django_app:
-    build: ./django_app
-    volumes:
-      - ./django_app:/app
-    ports:
-      - "8000:8000"
-  
   jupyter:
     build: ./jupyter
     volumes:
       - ./jupyter/notebooks:/usr/src/app/notebooks
     ports:
       - "8888:8888"
+
+  appseed-app:
+    container_name: appseed_app
+    restart: always
+    build:
+      context: ./django_app
+      dockerfile: Dockerfile
+    env_file: ./django_app/.env
+    ports:
+      - "8000:8000"
+    networks:
+      - db_network
+      - web_network
+
+networks:
+  db_network:
+    driver: bridge
+  web_network:
+    driver: bridge
